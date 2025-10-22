@@ -7,8 +7,8 @@ import {
 
 // Cargar sabores y productos
 // COMPLETEN USTEDES
-let sabores;
-let productos;
+let sabores = JSON.parse(fs.readFileSync("./sabores.json","utf-8"));
+let productos = JSON.parse(fs.readFileSync("./sabores.json","utf-8"));
 
 // Ingresar cliente
 let cliente = ingresarCliente();
