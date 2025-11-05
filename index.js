@@ -1,23 +1,37 @@
-import {
-  seleccionarCantidadGustos,
-  ingresarCliente,
-  seleccionarProducto,
-  seleccionarSabores,
-} from "./dataEntry.js";
+  import fs from "fs";
+  import {
+    seleccionarCantidadGustos,
+    ingresarCliente,
+    seleccionarProducto,
+    seleccionarSabores,
+  } from "./dataEntry.js";
 
-// Cargar sabores y productos
-// COMPLETEN USTEDES
-let sabores = JSON.parse(fs.readFileSync("./sabores.json","utf-8"));
-let productos = JSON.parse(fs.readFileSync("./sabores.json","utf-8"));
+  // Cargar sabores y productos
+  // COMPLETEN USTEDES
+  let sabores = JSON.parse(fs.readFileSync("data/productos.json","utf-8"));
+  let productos = JSON.parse(fs.readFileSync("data/productos.json","utf-8"));
 
-// Ingresar cliente
-let cliente = ingresarCliente();
-// Elegir producto
-let producto = seleccionarProducto(productos);
-// Elegir cantidad de gustos
-let gustos = seleccionarCantidadGustos(producto.maxGustos);
-// Elegir sabores
-let saboresElegidos = seleccionarSabores(sabores, gustos);
+  // Ingresar cliente
+  let cliente = ingresarCliente();
+  // Elegir producto
+  let producto = seleccionarProducto(productos);
+  // Elegir cantidad de gustos
+  let gustos = seleccionarCantidadGustos(producto.maxGustos);
+  // Elegir sabores
+  let saboresElegidos = seleccionarSabores(sabores, gustos);
 
-// Guardar pedido
-// COMPLETEN USTEDES
+  // Guardar pedido
+  // COMPLETEN USTEDES
+  let pedido = {
+    cliente : cliente,
+    producto :productos,
+    sabores : saboresElegidos
+  }
+
+  //poner chcp 65001 antes de correr el codigo para que se conveinrta a utf 8 y no halla errorees de ortografia
+ 
+
+
+
+
+  
