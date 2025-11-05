@@ -29,7 +29,23 @@
   }
 
   //poner chcp 65001 antes de correr el codigo para que se conveinrta a utf 8 y no halla errorees de ortografia
- 
+let pedidos = []
+const pedidosPath = data/pedidos.json
+
+
+try {
+  pedidos = JSON.parse(fs.readFileSync(pedidosPath, "utf-8"));
+} catch (error) {
+  console.log("No se encontró pedidos.json");
+  pedidos = []
+}
+
+
+  pedidos.push(pedido)
+
+fs.writeFileSync(pedidosPath, JSON.stringify(pedidos,))
+
+console.log("Pedido guardado correctamente");
 
 
 
